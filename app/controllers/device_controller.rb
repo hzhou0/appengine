@@ -5,6 +5,6 @@ class DeviceController < ApplicationController
   def RequestPredict
   end
 
-  def Registar
+  def Register
   end
 end
