@@ -5,14 +5,19 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Device is, <%= @device_name%></h1>
+    <h1>Your autonomous trash can <%= @device_name %>
+is <%=@error_message %> @ <%= @time%></h1>
     <p>
-      You have successfully signed up to example.com,
-      your username is: 
+     <%= if @error_type=="NONCRITICAL" 
+               "Noncritical errors indicate that the trahcan is functional suboptimally.\nThis is likely an network issue. \nIf repeated errors occur, you can disable this in the firmware."
+         else 
+              "Critical errors indicate that the trashcan is inoperative.\nIt is recommended that you fix it right away. "
+         end
+      %> 
     </p>
+   
     <p>
-      To login to the site, just follow this link: 
+      Visit <a href= <%=@url+"/Help"%>>the project website</a> for more information
     </p>
-    <p>Thanks for joining and have a great day!</p>
   </body>
 </html>

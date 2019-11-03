@@ -1,10 +1,15 @@
 
-Welcome to example.com
+Top of the morning!(it's morning somewhere in the world)
 ===============================================
  
-You have successfully signed up to example.com,
-your username is
- 
-To login to the site, just follow this link:
- 
-Thanks for joining and have a great day!
+
+Your autonomous trash can <%= @device_name %>
+is <%= @error_message %> @ <%= @time%>. 
+
+<%= if @error_type=="NONCRITICAL" 
+		"Noncritical errors indicate that the trahcan is functional suboptimally.\nThis is likely an network issue. \nIf repeated errors occur, you can disable this in the firmware."
+	else 
+		 "Critical errors indicate that the trashcan is inoperative.\nIt is recommended that you fix it right away. "
+	end
+	%>
+Visit<%=%>/Help for more information
