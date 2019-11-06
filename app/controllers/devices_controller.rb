@@ -10,7 +10,7 @@ class DevicesController < ApplicationController
                      device_name: @device_name, 
                      error_type: @error_type,
                      error_message: @error_message,
-                     url: @url).alert.deliver_now
+                     url: @url.delete_suffix("/devices/Flag")).alert.deliver_now
   end
 
   def RequestPredict	

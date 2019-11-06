@@ -1,1 +1,3 @@
 runtime: ruby25
+env_variables:
+  SECRET_KEY_BASE: b6db04a3abaa3594a345cc6a46364b823015f95762d405f9b761925f08efdd0f6fad587c931a19aaf1be963a1e164a314d515fad65cd96824cd7b2d90333af5b
