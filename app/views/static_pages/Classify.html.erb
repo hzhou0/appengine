@@ -2,25 +2,54 @@
 <h1>StaticPages#Classify</h1>
 <p>Find me in app/views/static_pages/Classify.html.erb</p>
 
-<body onload="getImage()">
+<body>
 
 <script>
+	var ERROR_IMG = "https://storage.googleapis.com/trashsort-258504-vcm/DATASET/O/O_1.jpg";
 	function getImage(){
-		document.getElementById("C").src = "https://storage.googleapis.com/trashsort-258504-vcm/DATASET/O/O_1.jpg";
+		//document.getElementById("C").src = "https://storage.googleapis.com/trashsort-258504-vcm/DATASET/O/O_1.jpg";
+		var xhttp = new XMLHttpRequest();
+		var src;
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				src = this.responseText;
+				if(src=="no_images"){
+					document.getElementById("C").src = ERROR_IMG;
+				}
+				else{
+					document.getElementById("C").src = src;
+				}
+			}
+		};
+		xhttp.open("GET", "static_pages/Classify_Get.txt", true);
+		xhttp.send();
 	}
 	function postImage(category){
-
-
+		var src = document.getElementById("C").src;
+		if(src!=ERROR_IMG){
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("Post", "static_pages/Classify_Post.txt", false);
+			xhttp.setRequestHeader("Content-type", "application/json");
+	        var payload = {src: src, category: category};
+			xhttp.send(JSON.stringify(payload));
+		}
+		else{
+			console.log("no_images in postImage");
+		}
+		getImage();
 	}
+	window.onload = getImage();
 </script>
 
-<img id="C" src="" height="600"></img> 
+<img id="C" class="mx-auto d-block"src="" height="600"></img> 
 <br>
-<input type="button" class="btn gray btn-lg" value="Metal"></input>
-<input type="button" class="btn lightblue btn-lg" value="Glass"></input>
-<input type="button" class="btn blue btn-lg" value="Plastic"></input>
-<input type="button" class="btn green btn-lg" value="Organic"></input>
-<input type="button" class="btn brown btn-lg" value="Paper"></input>
-<input type="button" class="btn red btn-lg" value="Hazardous"></input>
-<input type="button" class="btn black btn-lg" value="Landfill"></input>
+<input type="button" class="btn gray btn-lg" value="Metal" onclick='postImage("Metal")'></input>
+<input type="button" class="btn lightblue btn-lg" value="Glass" onclick='postImage("Glass")'></input>
+<input type="button" class="btn blue btn-lg" value="Plastic" onclick='postImage("Plastic")'></input>
+<input type="button" class="btn green btn-lg" value="Organic" onclick='postImage("Organic")'></input>
+<input type="button" class="btn brown btn-lg" value="Paper" onclick='postImage("Paper")'></input>
+<input type="button" class="btn red btn-lg" value="Hazardous" onclick='postImage("Hazardous")'></input>
+<input type="button" class="btn black btn-lg" value="Landfill" onclick='postImage("Landfill")'></input>
+<div class="spinner-border text-info"></div>
+
 </body>
