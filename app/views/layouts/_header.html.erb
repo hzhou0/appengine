@@ -3,9 +3,10 @@
     <%= link_to "Eco One", '#', id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   '#' %></li>
-        <li><%= link_to "Help",   '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
+        <li><%= link_to "Home",   request.base_url%></li>
+        <li><%= link_to "About",   request.base_url+"/About" %></li>
+        <li><%= link_to "Demo", request.base_url+"/Demo" %></li>
+        <li><%= link_to "Classify", request.base_url+"/Classify" %></li>
       </ul>
     </nav>
   </div>

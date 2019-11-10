@@ -19,7 +19,6 @@ textarea {
 
 .left {
   text-align: left;
-  padding-left: 20%;
 }
 
 .center h1 {
@@ -102,3 +101,15 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+button{
+    padding: 25px;
+}
+/* colors */
+.green {background-color: #4CAF50; color: white;} /* Green */
+.blue {background-color: #008CBA; color: white;} /* Blue */
+.red {background-color: #f44336; color: white;} /* Red */
+.gray {background-color: #e7e7e7; color: black;} /* Gray */
+.black {background-color: #555555; color: white;} /* Black */
+.brown {background-color: #cc9900; color: white;} /* Brown */
+.lightblue{background-color: #ccffff; color: grey;} 

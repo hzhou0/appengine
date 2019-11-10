@@ -13,8 +13,6 @@ class DevicesController < ApplicationController
                      url: @url.delete_suffix("/devices/Flag")).alert.deliver_now
   end
 
-  def RequestPredict	
-  end
 
   def Register
   end
