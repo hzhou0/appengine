@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top">
-  <div class="container">
-    <%= link_to "Eco One", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   request.base_url%></li>
-        <li><%= link_to "About",   request.base_url+"/About" %></li>
-        <li><%= link_to "Demo", request.base_url+"/Demo" %></li>
-        <li><%= link_to "Classify", request.base_url+"/Classify" %></li>
+<header >
+  <div>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top">
+      <ul class="navbar-nav mr-auto">
+            <%= link_to "Eco One", '#', class: "navbar-brand" %>
+        <li class="nav-item"><%= link_to "Home",   request.base_url, class: "nav-link"%></li>
+        <li class="nav-item"><%= link_to "About",   request.base_url+"/About", class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Demo", request.base_url+"/Demo", class: "nav-link" %></li>
+        <li class="nav-item"><%= link_to "Classify", request.base_url+"/Classify", class: "nav-link" %></li>
       </ul>
     </nav>
   </div>
