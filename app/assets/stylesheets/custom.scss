@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 body {
-  padding-top: 60px;
+  padding-top: 3%;
 }
 
 section {
@@ -21,7 +21,11 @@ textarea {
 }
 
 .center h1 {
-  margin-bottom: 10px;
+}
+.jumbotron{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -29,20 +33,21 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  margin: 5%;
 }
 
-h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+h1{
+  font-weight: bold;
+  font-size: 5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  font-weight: normal;
-  color: #777;
+  font-weight: bold;
+  font-size: 2em;
+  letter-spacing: 2px;
+  font-style: italic;
 }
 
 p {
