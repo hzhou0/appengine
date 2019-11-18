@@ -1,8 +1,5 @@
 @import "bootstrap";
 
-body {
-  padding-top: 3%;
-}
 
 section {
   overflow: auto;
@@ -23,6 +20,8 @@ textarea {
 .center h1 {
 }
 .jumbotron{
+  margin-top: 4%;
+  margin-bottom: 4%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -33,28 +32,46 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  margin: 5%;
 }
 
 h1{
+  font-family: 'Tomorrow', sans-serif;
+  margin: 5%;
   font-weight: bold;
   font-size: 5em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
-h2 {
+h2{
+  font-family: 'Roboto', sans-serif;
+  margin: 5%;
   font-weight: bold;
   font-size: 2em;
   letter-spacing: 2px;
   font-style: italic;
 }
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+h3 {
+  font-family: 'Tomorrow', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+}
+h4 {
+  font-family: 'Tomorrow', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  line-height: 1.7em;
+  text-align: center;
+}
+
+img{
+  margin: 3%;
+}
 /* header */
 
 #logo:hover {

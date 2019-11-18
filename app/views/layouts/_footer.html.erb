@@ -1,13 +1,31 @@
-<footer class="footer">
-  <small>
-    The <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-    by <a href="http://www.michaelhartl.com/">Michael Hartl</a>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to "About",   '#' %></li>
-      <li><%= link_to "Contact", '#' %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
-    </ul>
-  </nav>
-</footer>
+  <div class="jumbotron jumbotron-fluid bg-dark text-light" style="margin-bottom:0px">
+    <div>
+      <div class="container-fluid">
+        <div class="row container-fluid">
+          <div class="col">
+            <h3 class="a" id="text">TrashSort is developed by Henry Zhou</h3>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+<script>
+  function changeText(){
+    var state=document.getElementById("text").className;
+    var nextText;
+    if(state=="a"){
+      nextText="With help from the Rockridge Environment Club"
+      document.getElementById("text").className="b";
+    }
+    else if(state=="b"){
+      nextText="Special thanks to Christian Seidel, House Yamnuska, David Henning, and Matt Trask"
+      document.getElementById("text").className="c";
+    }
+    else if(state=="c"){
+      nextText="TrashSort is developed by Henry Zhou"
+      document.getElementById("text").className="a";
+    }
+    document.getElementById("text").innerHTML=nextText;
+  }
+  window.setInterval(changeText, 3000);
+</script>
