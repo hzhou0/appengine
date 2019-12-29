@@ -18,10 +18,10 @@ class StaticPagesController < ApplicationController
   def Classify_Get
   	  source_bucket="trashsort_datastore"
   	  require "google/cloud/storage"
-  	  storage = Google::Cloud::Storage.new project_id: 'trashsort-258504', keyfile: '/home/henry/Documents/appengine_key.json'
-	  bucket  = storage.bucket source_bucket
-	  files = bucket.files prefix: "Unlabeled"
-	  files.all(request_limit: 1) do |file|
+  	  storage = Google::Cloud::Storage.new project_id: 'trashsort-258504'#, keyfile: '/home/henry/Documents/appengine_key.json'
+	    bucket  = storage.bucket source_bucket
+	    files = bucket.files prefix: "Unlabeled"
+	    files.all(request_limit: 1) do |file|
   	  	@file=file.public_url
   	  end
   	  if @file.nil?
@@ -41,7 +41,7 @@ class StaticPagesController < ApplicationController
 		file_name = @src.delete_prefix(prefix)
 		
 		# authenticate to GCP
-		storage = Google::Cloud::Storage.new project_id: 'trashsort-258504', keyfile: '/home/henry/Documents/appengine_key.json'
+		storage = Google::Cloud::Storage.new project_id: 'trashsort-258504'#, keyfile: '/home/henry/Documents/appengine_key.json'
 		bucket  = storage.bucket source_bucket
 		file = bucket.file file_name
 		file.copy @category+'/'+@category+'.'+file_name.delete_prefix("Unlabeled/")
