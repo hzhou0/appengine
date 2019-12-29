@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_10_26_182634) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "devices", force: :cascade do |t|
     t.string "name"
     t.string "owner"

@@ -7,7 +7,7 @@ gem 'google-cloud-storage'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use bootstrap-sass for styling
 gem 'bootstrap', '~>4.3.1'
 # Use Puma as the app server
