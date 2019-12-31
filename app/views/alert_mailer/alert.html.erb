@@ -5,8 +5,12 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Your autonomous trash can <%= @device_name %>
-is <%=@error_message %> @ <%= @time%></h1>
+    <h2>TrashCan Name:  <%= @device_name %></h2>
+    <br>
+    <h2>Status:  <%= @error_type %></h2>
+    <br>
+    <h2>Error Ocurred At:  <%= @time %> (<%= @time_zone%>)</h2>
+    <br>
     <p>
      <%= if @error_type=="NONCRITICAL" 
                "Noncritical errors indicate that the trahcan is functional suboptimally.\nThis is likely an network issue. \nIf repeated errors occur, you can disable this in the firmware."
