@@ -44,7 +44,7 @@ class StaticPagesController < ApplicationController
 		storage = Google::Cloud::Storage.new project_id: 'trashsort-263700', keyfile: Rails.root.to_s + '/GCP_storage_key.json'
 		bucket  = storage.bucket source_bucket
 		file = bucket.file file_name
-		file.copy @category+'/'+@category+'.'+file_name.delete_prefix("Unlabeled/")
+		file.copy @category+'/'+file_name.delete_prefix("Unlabeled/")
 		file.delete
 		render inline: file.name
   end
