@@ -1,11 +1,32 @@
 
-<h1>StaticPages#Classify</h1>
-<p>Find me in app/views/static_pages/Classify.html.erb</p>
+<h1>Classify</h1>
+<h2>More Data = Better Models</h2>
 
 <body>
 
+<img id="C" class="mx-auto d-block" src="" onload="loaded()" height="600"></img> 
+<div id="B" class="spinner-grow text-dark spinner"></div>
+
+<br>
+<div class="btn-group d-block text-center">
+<input type="button" class="btn gray btn-lg" value="Metal" onclick='postImage("Metal")'></input>
+<input type="button" class="btn lightblue btn-lg" value="Glass" onclick='postImage("Glass")'></input>
+<input type="button" class="btn blue btn-lg" value="Plastic" onclick='postImage("Plastic")'></input>
+<input type="button" class="btn green btn-lg" value="Organic" onclick='postImage("Organic")'></input>
+<input type="button" class="btn brown btn-lg" value="Paper" onclick='postImage("Paper")'></input>
+<input type="button" class="btn red btn-lg" value="Hazardous" onclick='postImage("Hazardous")'></input>
+<input type="button" class="btn black btn-lg" value="Landfill" onclick='postImage("Landfill")'></input>
+</div>
+
+</body>
 <script>
-	var ERROR_IMG = "https://storage.googleapis.com/trashsort-258504-vcm/DATASET/O/O_1.jpg";
+	function loading(){
+		document.getElementById("B").style.visibility="visible";
+	}
+	function loaded(){
+		document.getElementById("B").style.visibility="hidden";
+	}
+	var ERROR_IMG = "https://www.epaisa.com/wp-content/uploads/2016/09/out_of_stock.png"
 	function getImage(){
 		//document.getElementById("C").src = "https://storage.googleapis.com/trashsort-258504-vcm/DATASET/O/O_1.jpg";
 		var xhttp = new XMLHttpRequest();
@@ -25,6 +46,7 @@
 		xhttp.send();
 	}
 	function postImage(category){
+		loading();
 		var src = document.getElementById("C").src;
 		if(src!=ERROR_IMG){
 			var xhttp = new XMLHttpRequest();
@@ -32,6 +54,7 @@
 			xhttp.setRequestHeader("Content-type", "application/json");
 	        var payload = {src: src, category: category};
 			xhttp.send(JSON.stringify(payload));
+			console.log(payload)
 		}
 		else{
 			console.log("no_images in postImage");
@@ -39,17 +62,5 @@
 		getImage();
 	}
 	window.onload = getImage();
+	window.onload = loading();
 </script>
-
-<img id="C" class="mx-auto d-block"src="" height="600"></img> 
-<br>
-<input type="button" class="btn gray btn-lg" value="Metal" onclick='postImage("Metal")'></input>
-<input type="button" class="btn lightblue btn-lg" value="Glass" onclick='postImage("Glass")'></input>
-<input type="button" class="btn blue btn-lg" value="Plastic" onclick='postImage("Plastic")'></input>
-<input type="button" class="btn green btn-lg" value="Organic" onclick='postImage("Organic")'></input>
-<input type="button" class="btn brown btn-lg" value="Paper" onclick='postImage("Paper")'></input>
-<input type="button" class="btn red btn-lg" value="Hazardous" onclick='postImage("Hazardous")'></input>
-<input type="button" class="btn black btn-lg" value="Landfill" onclick='postImage("Landfill")'></input>
-<div class="spinner-border text-info"></div>
-
-</body>
