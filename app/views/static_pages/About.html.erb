@@ -1,2 +1,172 @@
-<h1>StaticPages#About</h1>
-<p>Find me in app/views/static_pages/About.html.erb</p>
+<%provide(:title, "About")%>
+<style>
+    
+ .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #F5F5F5;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.overlay:hover {
+  opacity: 1;
+}
+p{
+    text-align: left;
+}
+</style>
+ 
+<div class="jumbotron jumbotron-fluid" style="background-image: url(/assets/cityscape.jpg); filter: grayscale(100%); margin-top:2%;">
+	<div class="container-fluid"> 
+		<div class="row container-fluid">
+				<div class="col-3"></div>
+				<div class="col-6">
+					<h1 class="center" style="color:white;margin-top: 30%">
+				        How Trashsort Works
+					</h1>
+				</div>
+				<div class="col-3"></div>
+		</div>
+	</div>
+</div>
+<div>
+    
+<div style="position:relative;width:30%;margin:3%" class="mx-auto d-block">
+ <img src="/assets/trashcan.jpg" class= "rounded" style="display:block;width:100%;height:auto;margin:0%;">
+  <div class="overlay">
+    <div class="text">Early Engineering Sample</div>
+  </div>
+</div>
+<div>
+	<div class="container-fluid">
+		<div class="row container-fluid">
+			<div class="col"></div>
+			<div class="col-7 justify-content-center">
+                <h3 class="center">Versatility and Power</h3>
+                <br>
+                <br>
+				<h4>
+				Big Data
+				</h4>
+				<br>
+				<p>Every image taken by trashsort devices is uploaded to google-hosted servers along with when its taken and what the device classified it as. This data 
+                can then be relabeled and reused to build ever more accurate models.</p>
+                <br>
+                <h4>
+				Seamless Diagnostics
+				</h4>
+				<br>
+				<p>Trashsort devices can be informs of any problems its might experience in its operation through email, detecting blockages, connectivity problems, or sensor damage.
+                Configureable to show all or only critical errors.</p>
+                <br>
+                <h4>
+				Remote access
+				</h4>
+				<br>
+				<p>Trashsort devices use git to automatically update their firmware along with their image recognition AI if connected to the internet. Additionally, remote access to the OS is possibe through VNC if the device is connected to local networking.</p>
+                <br>
+                <h4>
+				Deploy Anywhere
+				</h4>
+				<br>
+				<p>Want to put trashsort somewhere without networking? No worries. Trashsort is designed to operate with an unreliable connection or fully offline. When in this mode,
+                images and diagnostics are stored locally and will upload when it next has internet access. Note that updating is not possible when offline.</p>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+</div>	
+<div class="jumbotron jumbotron-fluid" style="background-image: url(/assets/circuits.jpg);height:20%">
+	<br>	<br>	<br>	<br>	<br>
+</div>
+<div>
+	<div class="container-fluid">
+		<div class="row container-fluid">
+			<div class="col"></div>
+			<div class="col-7 justify-content-center">
+                <h3 class="center">Source Code</h3>
+                <br>
+                <br>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+</div>
+<div>
+	<div class="container-fluid">
+		<div class="row container-fluid">
+			<div class="col justify-content-center">
+                <h5>
+				Native Trashsort Device Code(Python)
+				</h5>
+                <br>
+				<button id="native" type="button" class="btn btn-outline-dark" style="padding:0;" onclick="native()">
+                    <div class="media border p-3">
+                      <img src="assets/github.png" class="align-self-center mr-3 rounded-circle">
+                      <div class="media-body">
+                        <p>View on GitHub</p>
+                      </div>
+                    </div>
+                </button>
+            </div>
+			<div class="col justify-content-center">
+				<h5>
+				Cloud Infrastructure Code(RoR)
+				</h5>
+                <br>
+				<button id="cloud" type="button" class="btn btn-outline-dark" style="padding:0;" onclick="cloud()">
+                    <div class="media border p-3">
+                      <img src="assets/github.png" class="align-self-center mr-3 rounded-circle">
+                      <div class="media-body">
+                        <p>View on GitHub</p>
+                      </div>
+                    </div>
+                </button>
+			</div>
+			<div class="col  justify-content-center">
+              <h5>
+				AI model Training(Python)
+                </h5>
+                <br>
+				<button type="button" class="btn btn-outline-dark" style="padding:0;" onclick="ai()">
+                    <div class="media border p-3">
+                      <img src="assets/github.png" class="align-self-center mr-3 rounded-circle">
+                      <div class="media-body">
+                        <p>View on GitHub</p>
+                      </div>
+                    </div>
+                </button>
+            </div>
+		</div>
+	</div>
+</div>
+<script>
+    function ai(){
+        window.open( 
+              "https://github.com/NeverLucky123/Trash_Sort", "_blank"); 
+    }
+    function cloud(){
+        window.open( 
+              "https://github.com/NeverLucky123/appengine", "_blank"); 
+    }
+    function native(){
+        window.open( 
+              "https://github.com/NeverLucky123/TrashCan_Native", "_blank"); 
+    }
+</script>
+
